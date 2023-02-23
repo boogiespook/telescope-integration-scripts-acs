@@ -18,18 +18,21 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import java.util.Set;
+//quarkus.kubernetes-config.secrets=postgresql
 
 @Command(name = "Greeting", mixinStandardHelpOptions = true)
-public class main implements Runnable {
+public class telescopeComplianceRhacs implements Runnable {
 
 //    String query = "SELECT * from integrations WHERE integration_id = ?";
-    String query = "SELECT * from integrations,integration_methods WHERE integration_method_id = integration_methods.id AND integration_method_name = 'telescope-compliance-rhacs'";
+    String query = "SELECT * from integrations,integration_methods WHERE integration_method_id = integration_methods.id AND integration_method_name = 'telescopeComplianceRhacs'";
 
     @Parameters(paramLabel = "<dbUsername>", defaultValue = "telescope", description = "Db username")
     String userName;
+    //String userName = ${databaseUser};
 
     @Parameters(paramLabel = "<dbPassword>", defaultValue = "quarkus", description = "Db password")
     String password;
+    //String = ${databasePassword};
 
     @Parameters(paramLabel = "<dbUrl>", defaultValue = "jdbc:postgresql://localhost:5432/telescope", description = "Db URL")
     String url;

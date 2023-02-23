@@ -12,4 +12,4 @@ FROM registry.access.redhat.com/ubi8/openjdk-17:1.14
 #COPY --from=build telescopeComplianceRhacs.jar /app/telescopeComplianceRhacs.jar
 #COPY --from=build lib/* /app/lib/
 WORKDIR /app
-CMD "java" "-jar" "telescopeComplianceRhacs.jar"
+CMD "java" "-jar" "/app/telescopeComplianceRhacs.jar"

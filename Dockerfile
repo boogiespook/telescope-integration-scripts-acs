@@ -13,4 +13,4 @@ RUN mkdir /app/lib
 COPY --from=build /app/telescopeComplianceRhacs.jar /app/telescopeComplianceRhacs.jar
 COPY --from=build lib/* /app/lib/
 WORKDIR /app
-CMD "java" "-jar" "/app/telescopeComplianceRhacs.jar"
+#CMD "java" "-jar" "/app/telescopeComplianceRhacs.jar"

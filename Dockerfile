@@ -4,7 +4,7 @@ RUN mkdir /app
 WORKDIR /app
 COPY . /app
 
-RUN jbang export portable src/telescopeComplianceRhacs.java
+RUN jbang export portable --force src/telescopeComplianceRhacs.java
 
 FROM registry.access.redhat.com/ubi8/openjdk-17:1.14
 RUN mkdir /app/

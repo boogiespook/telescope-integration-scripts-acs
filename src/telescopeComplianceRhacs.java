@@ -34,7 +34,7 @@ public class telescopeComplianceRhacs implements Runnable {
     String password;
     //String = ${databasePassword};
 
-    @Parameters(paramLabel = "<dbUrl>", defaultValue = "jdbc:postgresql://localhost:5432/telescope", description = "Db URL")
+    @Parameters(paramLabel = "<dbUrl>", defaultValue = "jdbc:postgresql://postgresql:5432/telescope", description = "Db URL")
     String url;
 
     @Option(names = { "-v",

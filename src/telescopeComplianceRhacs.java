@@ -16,7 +16,7 @@ import java.sql.*;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-
+import java.util.Map;
 import java.util.Set;
 //quarkus.kubernetes-config.secrets=postgresql
 
@@ -26,17 +26,17 @@ public class telescopeComplianceRhacs implements Runnable {
 //    String query = "SELECT * from integrations WHERE integration_id = ?";
     String query = "SELECT * from integrations,integration_methods WHERE integration_method_id = integration_methods.id AND integration_method_name = 'telescopeComplianceRhacs'";
 
-    @Parameters(paramLabel = "<dbUsername>", defaultValue = "telescope", description = "Db username")
-    String userName;
-    //String userName = ${databaseUser};
+    //@Parameters(paramLabel = "<dbUsername>", defaultValue = "telescope", description = "Db username")
+    //String userName;
+    String userName = System.getenv("PG_USER");
 
-    @Parameters(paramLabel = "<dbPassword>", defaultValue = "quarkus", description = "Db password")
-    String password;
-    //String = ${databasePassword};
+    //@Parameters(paramLabel = "<dbPassword>", defaultValue = "quarkus", description = "Db password")
+    //String password;
+    String password = System.getenv("PG_PASSWORD");
 
-    @Parameters(paramLabel = "<dbUrl>", defaultValue = "jdbc:postgresql://postgresql:5432/telescope", description = "Db URL")
-    String url;
-
+    //@Parameters(paramLabel = "<dbUrl>", defaultValue = "jdbc:postgresql://postgresql:5432/telescope", description = "Db URL")
+    //String url;
+    String url = System.getenv("PG_DB");
     @Option(names = { "-v",
             "--verbose" }, description = "Verbose mode. Helpful for troubleshooting. Multiple -v options increase the verbosity.")
     private boolean verbose;

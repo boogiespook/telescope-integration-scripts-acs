@@ -19,4 +19,6 @@ RUN mkdir /app/lib
 COPY --from=build /app/telescopeComplianceRhacs.jar /app/telescopeComplianceRhacs.jar
 COPY --from=build /app/lib/* /app/lib/
 WORKDIR /app
-CMD "java" "-jar" "/app/telescopeComplianceRhacs.jar"
+
+## Don't actually run the code, just setup the env and the app can be run via a Job
+# CMD "java" "-jar" "/app/telescopeComplianceRhacs.jar"

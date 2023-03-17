@@ -21,4 +21,4 @@ COPY --from=build /app/lib/* /app/lib/
 WORKDIR /app
 
 ## Don't actually run the code, just setup the env and the app can be run via a Job
-# CMD "java" "-jar" "/app/telescopeComplianceRhacs.jar"
+CMD "java" "-jar" "/app/telescopeComplianceRhacs.jar"

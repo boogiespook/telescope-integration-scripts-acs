@@ -79,7 +79,7 @@ spec:
       description: Skip checks against built image
       name: skip-checks
       type: string
-    - default: "true"
+    - default: "false"
       description: Skip optional checks, set false if you want to run optional checks
       name: skip-optional
       type: string
